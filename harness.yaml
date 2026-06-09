@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1.0",
+  "project": {
+    "name": "TODO",
+    "kind": "agent-native-research-project",
+    "current_phase": "seed",
+    "goal": "TODO: conference-paper submission goal"
+  },
+  "entrypoints": {
+    "agent_map": "AGENTS.md",
+    "current_status": "memory/current-status.md",
+    "phase_dashboard": "memory/phase-dashboard.yaml",
+    "boards": "memory/boards/"
+  },
+  "policy": {
+    "repo_is_system_of_record": true,
+    "ai_observations_start_in_staging": true,
+    "human_gates_required": true,
+    "validator_command": "rph validate ."
+  }
+}

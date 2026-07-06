@@ -1,0 +1,10 @@
+/.uv-envs/
+/code-worktrees/*
+!/code-worktrees/README.md
+/paper-worktrees/*
+!/paper-worktrees/README.md
+/.harness/private/*
+!/.harness/private/README.md
+**/.DS_Store
+**/__pycache__/
+*.pyc

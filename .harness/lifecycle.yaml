@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "phases": [
+    {
+      "id": "idea",
+      "goal": "Frame the problem, initial claims, risks, sources, and next actions.",
+      "required_components": [
+        "memory",
+        "research-artifact"
+      ],
+      "optional_components": [
+        "reference"
+      ]
+    },
+    {
+      "id": "reference-active",
+      "goal": "Index sources, create cards, and connect source implications to project memory.",
+      "required_components": [
+        "reference",
+        "memory"
+      ],
+      "optional_components": [
+        "code",
+        "paper"
+      ]
+    },
+    {
+      "id": "code-active",
+      "goal": "Implement method prototypes, runnable experiments, evaluation, and code-side evidence.",
+      "required_components": [
+        "code",
+        "memory"
+      ],
+      "optional_components": [
+        "reference",
+        "paper"
+      ]
+    },
+    {
+      "id": "paper-active",
+      "goal": "Project supported claims and evidence into paper source and paper-facing assets.",
+      "required_components": [
+        "paper",
+        "memory"
+      ],
+      "optional_components": [
+        "code",
+        "reference"
+      ]
+    },
+    {
+      "id": "submission-active",
+      "goal": "Prepare review, rebuttal, artifact, visibility, and final submission handoff.",
+      "required_components": [
+        "paper",
+        "reviewer",
+        "artifact",
+        "memory"
+      ],
+      "optional_components": [
+        "rebuttal"
+      ]
+    }
+  ]
+}

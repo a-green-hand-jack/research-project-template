@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1.0",
+  "project_runtime": {
+    "kind": "research-project-harness",
+    "template_mode": "progressive",
+    "description": "Project-local harness runtime, blueprints, skills, and validators."
+  },
+  "components": {
+    "reference": {
+      "path": "reference",
+      "status": "inactive",
+      "variants": [
+        "source-library"
+      ],
+      "active_variant": null
+    },
+    "code": {
+      "path": "code",
+      "status": "inactive",
+      "variants": [
+        "ml-python"
+      ],
+      "active_variant": null
+    },
+    "paper": {
+      "path": "paper",
+      "status": "inactive",
+      "variants": [
+        "latex-generic"
+      ],
+      "active_variant": null
+    },
+    "reviewer": {
+      "path": "reviewer",
+      "status": "available",
+      "variants": [
+        "minimal"
+      ],
+      "active_variant": "minimal"
+    },
+    "rebuttal": {
+      "path": "rebuttal",
+      "status": "available",
+      "variants": [
+        "minimal"
+      ],
+      "active_variant": "minimal"
+    },
+    "artifact": {
+      "path": "artifact",
+      "status": "available",
+      "variants": [
+        "minimal"
+      ],
+      "active_variant": "minimal"
+    }
+  },
+  "skills": {
+    "path": ".harness/skills",
+    "install_command": "npx skills add ./.harness/skills -a codex claude-code -y"
+  },
+  "policies": {
+    "agent_policy_path": ".agent",
+    "anatomy_path": "ANATOMY.md",
+    "change_control": "memory/change-control.yaml",
+    "session_tree": "memory/session-tree.md"
+  },
+  "validators": {
+    "registry": ".harness/validators/registry.yaml",
+    "default_command": "rph validate ."
+  }
+}

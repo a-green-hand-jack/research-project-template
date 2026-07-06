@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1.0",
+  "open_changes": [],
+  "closed_changes": [],
+  "tracked_change_types": [
+    "target_venue",
+    "deadline",
+    "main_claim",
+    "baseline_set",
+    "metric",
+    "dataset_split",
+    "visibility_policy",
+    "component_activation"
+  ],
+  "sync_surfaces": [
+    "PROJECT.md",
+    "harness.yaml",
+    "memory/phase-dashboard.yaml",
+    "memory/boards/",
+    "research-artifact/",
+    "docs/",
+    "ANATOMY.md"
+  ]
+}

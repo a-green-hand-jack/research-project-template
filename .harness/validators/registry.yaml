@@ -1,0 +1,10 @@
+{
+  "schema_version": "0.1.0",
+  "validators": [
+    {
+      "id": "core-rph",
+      "command": "rph validate .",
+      "scope": "harness object graph and component contract"
+    }
+  ]
+}

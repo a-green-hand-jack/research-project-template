@@ -10,12 +10,45 @@
     "agent_map": "AGENTS.md",
     "current_status": "memory/current-status.md",
     "phase_dashboard": "memory/phase-dashboard.yaml",
-    "boards": "memory/boards/"
+    "change_control": "memory/change-control.yaml",
+    "session_tree": "memory/session-tree.md",
+    "boards": "memory/boards/",
+    "harness_runtime": ".harness/manifest.yaml",
+    "anatomy": "ANATOMY.md",
+    "agent_policy": ".agent/"
+  },
+  "components": {
+    "reference": {
+      "path": "reference",
+      "status": "inactive"
+    },
+    "code": {
+      "path": "code",
+      "status": "inactive"
+    },
+    "paper": {
+      "path": "paper",
+      "status": "inactive"
+    },
+    "reviewer": {
+      "path": "reviewer",
+      "status": "available"
+    },
+    "rebuttal": {
+      "path": "rebuttal",
+      "status": "available"
+    },
+    "artifact": {
+      "path": "artifact",
+      "status": "available"
+    }
   },
   "policy": {
     "repo_is_system_of_record": true,
     "ai_observations_start_in_staging": true,
     "human_gates_required": true,
+    "change_control_required": true,
+    "structural_edits_update_anatomy": true,
     "validator_command": "rph validate ."
   }
 }

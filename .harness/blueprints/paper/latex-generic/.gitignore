@@ -1,4 +1,5 @@
-.agent/
+.agent/private/
+.agent/*.local.*
 *.aux
 *.bbl
 *.bcf

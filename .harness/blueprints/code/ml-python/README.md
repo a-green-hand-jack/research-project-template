@@ -47,4 +47,4 @@ Use mutating format/fix commands only when requested or documented by project
 policy, then review the diff.
 
 The scaffold uses `project_code` as a placeholder package so it can run tests
-immediately after activation. Rename it once the project identity is stable.
+immediately after initialization. Rename it once the project identity is stable.

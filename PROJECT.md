@@ -14,19 +14,22 @@ research project = management graph + epistemic graph + production artifacts
 
 The repo is the system of record. Important research state must be written into `memory/`, `research-artifact/`, or production artifact directories, not left only in chat.
 
-## Progressive components
+## Complete components
 
-This project starts in a lightweight idea-stage shape. `code/`, `paper/`, and
-`reference/` are placeholders until activated from `.harness/blueprints/`.
+This project starts with the full research control surface. `code/`, `paper`,
+and `reference/` are scaffolded already; use only the relevant surfaces for the
+current stage.
 
 - `memory/` is durable cross-component research state.
 - `.harness/` is the local agent/runtime layer: blueprints, skills, validators,
   lifecycle policy, and activation scripts.
+- `human/` stores human briefs, reviews, decisions, and inbox material that
+  should outlive chat.
 - `docs/` stores project-level designs, experiment plans, updates, audits, and
   timelines.
-- `code/` owns implementation, runnable experiments, evaluation, infra, and
-  code-side evidence after activation.
-- `paper/` owns paper source, paper-facing claims, venue mode, and source
-  visibility after activation.
+- `code/` owns implementation, runnable experiments, evaluation, infra, tests,
+  and code-side evidence.
+- `paper/` owns paper source, paper-facing claims, venue mode, figures, tables,
+  bibliography, and source visibility.
 - `reference/` owns raw sources, source cards, processing status, and
-  source-to-project notes after activation.
+  source-to-project notes.

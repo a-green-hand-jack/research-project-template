@@ -2,33 +2,33 @@
   "schema_version": "0.1.0",
   "project_runtime": {
     "kind": "research-project-harness",
-    "template_mode": "progressive",
-    "description": "Project-local harness runtime, blueprints, skills, and validators."
+    "template_mode": "complete",
+    "description": "Project-local harness runtime, complete component scaffolds, blueprints, skills, and validators."
   },
   "components": {
     "reference": {
       "path": "reference",
-      "status": "inactive",
+      "status": "active",
       "variants": [
         "source-library"
       ],
-      "active_variant": null
+      "active_variant": "source-library"
     },
     "code": {
       "path": "code",
-      "status": "inactive",
+      "status": "active",
       "variants": [
         "ml-python"
       ],
-      "active_variant": null
+      "active_variant": "ml-python"
     },
     "paper": {
       "path": "paper",
-      "status": "inactive",
+      "status": "active",
       "variants": [
         "latex-generic"
       ],
-      "active_variant": null
+      "active_variant": "latex-generic"
     },
     "reviewer": {
       "path": "reviewer",

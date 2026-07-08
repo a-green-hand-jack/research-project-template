@@ -19,9 +19,9 @@ crosses project components.
 ## Routing
 
 - Idea, claim, risk, action, or decision state -> root `memory/boards/`.
-- Runnable implementation or experiment work -> activate/use `code/`.
-- Paper source or paper-facing narrative -> activate/use `paper/`.
-- Source intake and source cards -> activate/use `reference/`.
+- Runnable implementation or experiment work -> use `code/`.
+- Paper source or paper-facing narrative -> use `paper/`.
+- Source intake and source cards -> use `reference/`.
 - Review simulation -> `reviewer/`.
 - Real reviews and responses -> `rebuttal/`.
 - Artifact evaluation or release handoff -> `artifact/`.

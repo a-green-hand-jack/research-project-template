@@ -3,14 +3,15 @@
   "phases": [
     {
       "id": "idea",
-      "goal": "Frame the problem, initial claims, risks, sources, and next actions.",
+      "goal": "Frame the problem, initial claims, risks, sources, and next actions using the complete scaffold.",
       "required_components": [
         "memory",
-        "research-artifact"
+        "research-artifact",
+        "reference",
+        "code",
+        "paper"
       ],
-      "optional_components": [
-        "reference"
-      ]
+      "optional_components": []
     },
     {
       "id": "reference-active",

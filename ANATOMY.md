@@ -16,6 +16,8 @@ research state in `memory/`, and generated/runtime capabilities in `.harness/`.
 - `.harness/` owns the generated runtime: component blueprints, local skills,
   validators, activation scripts, and private local overlays.
 - `.agent/` owns stable agent policies that should be reviewed like code.
+- `human/` owns human briefs, plan/result/recipe reviews, decisions, and inbox
+  material that should outlive chat.
 - `memory/` owns current project state, boards, session traces, and change
   control. It is active memory, not a place for large artifacts.
 - `research-artifact/` owns problem framing, assumptions, contribution maps,
@@ -23,9 +25,12 @@ research state in `memory/`, and generated/runtime capabilities in `.harness/`.
 
 ## Component Boundaries
 
-- `reference/` starts as a placeholder for source intake and source cards.
-- `code/` starts as a placeholder for runnable code and experiment machinery.
-- `paper/` starts as a placeholder for paper source and paper-facing evidence.
+- `reference/` owns source intake, source cards, processing status, and
+  source-to-project notes.
+- `code/` owns runnable code, experiments, evaluation, infra, tests, and
+  code-side run reports.
+- `paper/` owns paper source, figures, tables, bibliography, and paper-facing
+  evidence projection.
 - `reviewer/`, `rebuttal/`, and `artifact/` are available lightweight
   deliverable surfaces from day one.
 - `code-worktrees/` and `paper-worktrees/` document parallel checkout

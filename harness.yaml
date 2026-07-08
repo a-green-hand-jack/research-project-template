@@ -20,15 +20,18 @@
   "components": {
     "reference": {
       "path": "reference",
-      "status": "inactive"
+      "status": "active",
+      "variant": "source-library"
     },
     "code": {
       "path": "code",
-      "status": "inactive"
+      "status": "active",
+      "variant": "ml-python"
     },
     "paper": {
       "path": "paper",
-      "status": "inactive"
+      "status": "active",
+      "variant": "latex-generic"
     },
     "reviewer": {
       "path": "reviewer",
@@ -49,6 +52,7 @@
     "human_gates_required": true,
     "change_control_required": true,
     "structural_edits_update_anatomy": true,
+    "complete_template_components": true,
     "validator_command": "rph validate ."
   }
 }

@@ -5,6 +5,16 @@
 !/paper-worktrees/README.md
 /.harness/private/*
 !/.harness/private/README.md
+/code/.venv/
+/code/data/
+/code/runs/
+/code/checkpoints/
+/code/wandb/
+/code/lightning_logs/
+/paper/build/
+/paper/.latex-cache/
+/reference/sources/raw/
+/reference/sources/private/
 **/.DS_Store
 **/__pycache__/
 *.pyc

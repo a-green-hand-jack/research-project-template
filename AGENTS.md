@@ -4,7 +4,11 @@ This file is a map, not a manual. Keep it short and follow links only as needed.
 
 ## Identity
 
-This is an agent-native research project. The harness exists so Codex/agents can reliably enter, advance, validate, and hand off the project.
+This is an agent-native research project. The harness exists so Codex/agents can
+reliably enter, advance, validate, and hand off the project.
+
+The template is complete from the first commit: `reference/`, `code/`, and
+`paper/` are scaffolded already. Use only the surfaces relevant to the task.
 
 ## Entry order
 
@@ -35,20 +39,13 @@ Do not recursively read the whole repository before understanding the current ta
 - Session trace: `memory/sessions/`
 - Unverified AI observations: `research-artifact/staging/`
 
-## Component activation
+## Component surfaces
 
-`code/`, `paper/`, and `reference/` start as lightweight placeholders. Activate
-full scaffolds only when needed:
-
-```bash
-python .harness/scripts/activate-component.py reference --variant source-library
-python .harness/scripts/activate-component.py code --variant ml-python
-python .harness/scripts/activate-component.py paper --variant latex-generic
-```
-
-Runnable experiment logic belongs in `code/experiments/` after code activation.
-Project-level experiment plans belong in `docs/experiments/`, and canonical
-experiment objects belong in `memory/boards/experiments.yaml`.
+`reference/`, `code/`, and `paper/` are available from day one. Do not activate
+a second scaffold or create duplicate top-level directories. Runnable experiment
+logic belongs in `code/experiments/`. Project-level experiment plans belong in
+`docs/experiments/`, and canonical experiment objects belong in
+`memory/boards/experiments.yaml`.
 
 ## Writeback requirements
 
@@ -71,3 +68,5 @@ Before ending work:
 - Do not delete dead ends just because they are negative.
 - Do not expose private/internal sources in paper-facing or public artifacts without visibility checks.
 - Do not treat `.harness/` as durable research memory; write durable state into `memory/` or component docs.
+- Do not treat generated data, run outputs, checkpoints, or private source
+  bytes as tracked project state; index them instead.

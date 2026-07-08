@@ -1,20 +1,7 @@
 # Reference Component
 
-Activation status: inactive.
+This component owns project-local sources, source cards, processing status, and
+source-to-project notes.
 
-This placeholder marks where project-local sources and source cards will live.
-Activate it when the project needs a durable source library.
-
-```bash
-python ../.harness/scripts/activate-component.py reference --variant source-library
-```
-
-When active, this component owns:
-
-- raw or private source files under `sources/` and `papers/`;
-- copyright-safe source cards under `cards/`;
-- project implications under `project-use/`;
-- processing status and scan/read trajectories under `.agent/`.
-
-Do not copy long raw source text into public memory. Link durable claims and
-evidence to sanitized cards or project-use notes.
+Raw sources may be private or licensed. Do not assume they are safe to commit.
+Commit sanitized cards and project-use notes when they are useful and safe.

@@ -60,8 +60,8 @@ record the exact commands in `human/reviews/results/` or `docs/audits/`.
 
 ## Workflow
 
-1. Orient: confirm `pwd`, `git status -sb`, remotes, current branch, and the
-   generated-template sync base.
+1. Orient: confirm `pwd`, `git status -sb`, `git remote -v`, current branch,
+   local HEAD, pushed origin branch HEAD, and the generated-template sync base.
 2. Read `AGENTS.md`, `harness.yaml`, `.harness/manifest.yaml`,
    `memory/current-status.md`, and `ANATOMY.md`.
 3. Create or select a case branch such as `case/<source>-template-replay`.
@@ -80,7 +80,10 @@ record the exact commands in `human/reviews/results/` or `docs/audits/`.
    `origin/research-project-template`, fix the validator, template source,
    docs, tests, or workflow, validate, commit, and open a PR with base
    `research-project-template`.
-9. After upstream merge and generated-template sync, replay the original case
+9. When a case repo is promoted from disposable local state to a durable eval
+   fixture, give it a configured origin remote and record case repo, branch, and
+   commit in the upstream eval manifest.
+10. After upstream merge and generated-template sync, replay the original case
    and append the result to the case report.
 
 ## Report Shape
@@ -117,5 +120,7 @@ Classify each finding as one of:
   are backed by repository evidence, not chat memory.
 - Upstream contract: persistent fixes target `research-project-harness` branch
   `research-project-template`.
+- Remote contract: durable case fixtures have a configured origin remote,
+  branch, and pushed commit that match the upstream eval manifest.
 - Handoff contract: the final note names changed files, validators run,
   unresolved case debt, and any upstream PR or proposal.

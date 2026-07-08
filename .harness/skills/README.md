@@ -23,3 +23,5 @@ Core skills:
 - `subagent-routing`: choose child-agent budget by task shape.
 - `interactive-plan-doc`: create durable human-agent plans.
 - `recipe-harvesting`: turn repeated workflows into tested cookbook recipes.
+- `research-template-case-harness-test`: replay real research cases against
+  this template and feed durable gaps back to the upstream harness branch.

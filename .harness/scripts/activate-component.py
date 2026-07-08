@@ -23,6 +23,10 @@ COMPONENT_VARIANTS = {
 }
 
 
+def is_generated_noise(path: Path) -> bool:
+    return "__pycache__" in path.parts or path.suffix in {".pyc", ".pyo"}
+
+
 def load_mapping(path: Path) -> dict[str, Any]:
     text = path.read_text(encoding="utf-8")
     try:
@@ -46,6 +50,8 @@ def copy_blueprint(src: Path, dest: Path, *, force: bool) -> list[str]:
     conflicts: list[str] = []
     for item in src.rglob("*"):
         rel = item.relative_to(src)
+        if is_generated_noise(rel):
+            continue
         target = dest / rel
         if item.is_dir():
             continue
@@ -63,6 +69,8 @@ def copy_blueprint(src: Path, dest: Path, *, force: bool) -> list[str]:
 
     for item in src.rglob("*"):
         rel = item.relative_to(src)
+        if is_generated_noise(rel):
+            continue
         target = dest / rel
         if item.is_dir():
             target.mkdir(parents=True, exist_ok=True)

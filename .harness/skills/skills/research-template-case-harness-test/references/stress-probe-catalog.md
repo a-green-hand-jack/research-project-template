@@ -17,13 +17,20 @@ template contract.
 | Contradiction reciprocity | Let `EVD-*.contradicts_claims` and `CLM-*.evidence_basis.contradicting` disagree. | Validator should reject asymmetric contradiction links. |
 | Risk-action reciprocity | Let `RSK-*.actions` and `ACT-*.targets.risks` disagree. | Validator should reject asymmetric mitigation/action links. |
 | Risk-claim reciprocity | Let `RSK-*.claims` and `CLM-*.reviewer_risks` disagree. | Validator should reject asymmetric review-risk links. |
+| Next-action reciprocity | Let `CLM-*.next_actions` point at an action that does not target the claim. | Validator should reject asymmetric claim follow-up links. |
+| Decision reciprocity | Let `DEC-*.affects.*` name claims/actions/risks without corresponding `decisions` backlinks. | Validator should reject unacknowledged decision impact. |
+| Human gate reciprocity | Let `ACT-*.gate` and `GATE-*.linked_actions` disagree. | Validator should reject asymmetric gate/action links. |
 | Evidence provenance | Add evidence without provenance, visibility, or inspection path. | Validator or case review should flag missing provenance. |
+| Experiment evidence coupling | Let an experiment support/contradict claims without evidence sourced from that experiment, or let evidence cite an experiment whose claim lists disagree. | Validator should reject experiment/evidence graph drift. |
 | Source visibility | Use a private source in a paper-facing claim without visibility policy. | Source visibility board or review should block promotion. |
+| Inline private visibility leak | Set inline `visibility: public` or `anonymous-submission-safe` while the evidence source points under `reference/sources/private/`. | Validator should reject the visibility/source mismatch. |
 | Schema version drift | Remove or change `schema_version` in a core YAML file or board. | Validator should reject unsupported or missing schema versions. |
+| Phase dashboard drift | Point `next_agent_entrypoint` at a missing path or change `current_phase` without reflecting it in `memory/current-status.md`. | Validator should reject stale phase handoff state. |
 | Experiment closure | Mark an experiment complete without commit, config, metric source, or artifact pointer. | Case review should classify as harness gap if validator misses it. |
 | Artifact index | Reference a table, figure, checkpoint, or run output without an index entry. | Artifact review or future validator should catch the drift. |
 | Paper claim drift | Add a paper-facing claim not represented in `memory/boards/claims.yaml`. | Paper review should block or create an upstream validator proposal. |
 | Generated/private leakage | Commit paths covered by root `.gitignore` protected patterns. | Gitignore and review should prevent leakage. |
+| Release-surface leakage | Add private SSH URLs, local workstation paths, or EPFL PVC paths to `paper/`, `artifact/`, or `research-artifact/PAPER.md`. | Validator should reject private operational details in release-facing files. |
 | Human gate bypass | Change venue, main claim, baseline, metric, or release surface without a gate record. | Change-control or human-gate review should fail. |
 | Anatomy drift | Move a directory or ownership boundary without updating `ANATOMY.md`. | Anatomy drift control should catch the mismatch. |
 | Skill routing | Ask for cross-component work without reading `harness-router` or relevant component entrypoints. | Handoff should classify routing friction if agents miss required state. |

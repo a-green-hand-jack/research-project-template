@@ -31,13 +31,13 @@ rph validate .
 For one-off validation from the harness repository:
 
 ```bash
-uvx --from git+ssh://git@github.com/a-green-hand-jack/research-project-harness.git rph validate .
+uvx --from git+https://github.com/a-green-hand-jack/research-project-harness.git rph validate .
 ```
 
 For a persistent local tool install:
 
 ```bash
-uv tool install git+ssh://git@github.com/a-green-hand-jack/research-project-harness.git
+uv tool install git+https://github.com/a-green-hand-jack/research-project-harness.git
 ```
 
 ## Project Anatomy

@@ -17,6 +17,8 @@ whole repository.
 - `.agent/`: stable agent policy, not research facts.
 - `.harness/`: local runtime, skills, blueprints, and validators, not research
   memory.
+- `.claude/`: Claude Code subagents, permissions, hooks, commands, and
+  statusline. Machinery that enforces `.agent/` policy, not policy itself.
 - `human/`: human briefs, reviews, decisions, and inbox.
 - `memory/`: active state, boards, session tree, practices, and handoffs.
 - `research-artifact/`: problem logic, staging, negative results, and narrative

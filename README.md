@@ -8,7 +8,9 @@ skills, policies, and validators.
 The durable project state lives in `memory/`. The local agent runtime,
 component blueprints, validator registry, and project-local skills live in
 `.harness/`. Stable agent policy lives in `.agent/`, and structural routing
-lives in `ANATOMY.md`.
+lives in `ANATOMY.md`. Claude Code subagents, permissions, hooks, commands,
+and the statusline live in `.claude/`, so the boundaries described in
+`.agent/action-boundary.md` are mechanically enforced, not just documented.
 
 ## First Session
 
@@ -31,13 +33,13 @@ rph validate .
 For one-off validation from the harness repository:
 
 ```bash
-uvx --from git+https://github.com/a-green-hand-jack/research-project-harness.git rph validate .
+uvx --from git+ssh://git@github.com/a-green-hand-jack/research-project-harness.git rph validate .
 ```
 
 For a persistent local tool install:
 
 ```bash
-uv tool install git+https://github.com/a-green-hand-jack/research-project-harness.git
+uv tool install git+ssh://git@github.com/a-green-hand-jack/research-project-harness.git
 ```
 
 ## Project Anatomy
@@ -60,6 +62,7 @@ rebuttal/          real reviews and response planning
 artifact/          artifact evaluation and release handoff
 .agent/            stable agent policy and cookbook promotion rules
 .harness/          project-local agent runtime, skills, blueprints, validators
+.claude/           Claude Code subagents, permissions, hooks, commands, statusline
 ANATOMY.md         structural router for ownership, state, and component boundaries
 ```
 
@@ -99,6 +102,30 @@ The default skill pack includes routing, component reapplication, claim/evidence
 review, experiment workflow, paper writing, artifact indexing, anatomy drift
 control, session boundary control, worktree PR flow, subagent routing,
 interactive planning, and recipe harvesting.
+
+## Claude Code Subagents, Permissions, Hooks, And Statusline
+
+`.claude/agents/` holds isolated-context subagents for this project:
+`repo-researcher`, `feature-worker`, `test-runner`, `experiment-monitor`,
+`checkpoint-writer`, `subagent-router-agent`, `session-boundary-agent`,
+`artifact-librarian`, and `branch-reporter`. Each has a narrow `tools:` scope
+and a written boundary; see `.claude/agents/README.md`.
+
+`.claude/settings.json` turns `.agent/action-boundary.md` into enforced
+permissions (deny/ask/allow) instead of prose the agent might skip, wires a
+`PreToolUse` hook (`.claude/hooks/pre_tool_guard.py`) that blocks `sudo`,
+recursive force-delete, piping a download into a shell, force/main pushes,
+and direct edits to protected paths (`code/data/`, `code/checkpoints/`,
+`code/wandb/`, `reference/sources/raw|private/`, `.harness/private/`), and a
+`PreCompact` hook (`.claude/hooks/pre_compact_memory_check.py`) that reminds
+the agent to update `memory/current-status.md` before compacting.
+
+`.claude/statusline.py` shows model, git branch, worktree status, and
+session cost so session-boundary decisions happen before context runs out.
+
+Codex has no equivalent subagent/hook/settings layer today; treat
+`.agent/model-routing-policy.md` and `.agent/action-boundary.md` as the
+routing/boundary source of truth there.
 
 ## Component Boundaries
 

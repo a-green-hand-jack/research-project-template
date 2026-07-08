@@ -12,8 +12,8 @@
 *.synctex.gz
 *.toc
 *.pdf
-raw/
-data/
-csv/
-notebooks/
-plots/
+/raw/
+/data/
+/csv/
+/notebooks/
+/plots/

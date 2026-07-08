@@ -1,0 +1,90 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)",
+      "Bash(rm -fr:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Edit(code/data/**)",
+      "Edit(code/runs/**)",
+      "Edit(code/checkpoints/**)",
+      "Edit(code/wandb/**)",
+      "Edit(reference/sources/raw/**)",
+      "Edit(reference/sources/private/**)",
+      "Edit(.harness/private/**)",
+      "Write(code/data/**)",
+      "Write(code/runs/**)",
+      "Write(code/checkpoints/**)",
+      "Write(code/wandb/**)",
+      "Write(reference/sources/raw/**)",
+      "Write(reference/sources/private/**)",
+      "Write(.harness/private/**)"
+    ],
+    "ask": [
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(git worktree remove:*)",
+      "Bash(git push:*)",
+      "Bash(uv add:*)",
+      "Bash(uv sync:*)",
+      "Bash(uv remove:*)",
+      "Bash(kill:*)",
+      "Bash(sbatch:*)",
+      "Bash(runai:*)",
+      "Bash(gh pr create:*)",
+      "Bash(gh pr merge:*)",
+      "Bash(gh repo delete:*)",
+      "Bash(gh release:*)"
+    ],
+    "allow": [
+      "Read(**)",
+      "Bash(git status)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "Bash(git worktree list:*)",
+      "Bash(pytest:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(python -m unittest:*)",
+      "Bash(ruff check:*)",
+      "Bash(ruff format --check:*)",
+      "Bash(mypy:*)",
+      "Bash(rph validate:*)",
+      "Bash(python -m research_project_harness validate:*)",
+      "Bash(python .harness/scripts/activate-component.py:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(tail:*)",
+      "Bash(find:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/pre_tool_guard.py"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/pre_compact_memory_check.py"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "python3 .claude/statusline.py"
+  }
+}

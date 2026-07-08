@@ -31,6 +31,7 @@ Do not recursively read the whole repository before understanding the current ta
 - Structural map: `ANATOMY.md`
 - Agent policy: `.agent/`
 - Project-local runtime and blueprints: `.harness/`
+- Claude Code subagents/permissions/hooks/statusline: `.claude/`
 - Human-readable status: `memory/current-status.md`
 - Canonical phase: `memory/phase-dashboard.yaml`
 - Goal and scope changes: `memory/change-control.yaml`

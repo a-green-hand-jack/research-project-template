@@ -43,3 +43,17 @@ The template `.gitignore` protects common generated or private bytes:
 
 Tracked indexes, summaries, checksums, and inspection commands are preferred
 over committing large or private bytes.
+
+## Mechanical Enforcement (Claude Code)
+
+This boundary is not prose-only under Claude Code. `.claude/settings.json`
+denies `sudo`, recursive force-delete, and force/main pushes outright, and
+asks for confirmation before commit/checkout/push/kill/cluster-submit/PR
+actions. `.claude/hooks/pre_tool_guard.py` runs on every `Bash`/`Edit`/`Write`
+call and blocks direct writes into the protected paths above even when they
+are reached through a shell command rather than the `Edit`/`Write` tools.
+`.claude/hooks/pre_compact_memory_check.py` reminds the agent to update
+`memory/current-status.md` before a `PreCompact` event.
+
+Codex has no equivalent enforcement layer today; on Codex, these boundaries
+remain policy the agent must follow voluntarily.
